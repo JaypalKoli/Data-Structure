@@ -1,0 +1,78 @@
+#include<stdio.h>
+int top=-1;
+int stack [5];
+void push()
+{
+int num;
+if((top+1)==5)
+{
+ printf("Stack Is Full");
+ }
+else
+{
+printf("Enter The Number: ");
+scanf("%d", &num);
+top++;
+stack[top]=num;
+printf("%d elements is added to %d location", num, top);
+}
+}
+void pop()
+{
+int a;
+if(top==-1)
+{
+printf("\n stack Is Empty \n");
+}
+else
+{
+a=stack[top];
+printf("\n %d deleted from %d position: %d", &a);
+top--;
+}
+}
+void display()
+{
+int i;
+if (top==-1)
+{
+printf("\n Stack Is Empty \n");
+}
+else
+{
+printf("\n Content Of The Stack are: \n");
+for(i=top;i>-1;i--)
+{
+printf("%d", stack[i]);
+if(top==i)
+printf("\n i");
+else
+printf("\n");
+}
+}
+}
+int main()
+{
+int i,num,selectmenu,choice;
+printf("\nProgram For Stack Using Array\n");
+do
+{
+printf("\n\tMain Menu: \n1.Add element to stack\n2.Delete element from
+stack\n3.Display element of stack\n4.Exit from program\n\t");
+printf("\nSelect menu: ");
+scanf("%d", &choice);
+switch(choice)
+{
+case 1 : push(num);
+ break;
+case 2 : pop();
+ break;
+ case 3 : display();
+ break;
+ case 4 : printf("\n Exiting the program");
+ break;
+ default : printf("Invalid menu selected.");
+}
+} while(choice !=4);
+return 0;
+}
