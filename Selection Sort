@@ -1,0 +1,55 @@
+#include<stdio.h>
+void main()
+{
+	int array[100],i,j,k,n,smallest,position,temp;
+	clrscr();
+
+	printf("Enter number of elements\n");
+	scanf("%d",&n);
+
+	printf("Enter %d integers\n",n);
+
+	for(i=0;i<n;i++)
+	{
+	  scanf("%d",&array[i]);
+	}
+
+	for(i=0;i<(n-1);i++)
+	{
+	 smallest =array[i];
+	 position=i;
+
+	 for(j=(i+1);j<n;j++)
+	 {
+	  if(array[j]<smallest)
+	   {
+	     smallest=array[j];
+	     position=j;
+	   }
+	 }
+	 printf("\n smallest = %d",smallest,position);
+	 getch();
+
+	 if(smallest== array[i])
+	 {
+	  printf("\n");
+	 }
+	 else
+	 {
+	   temp = array[i];
+	   array[i]=smallest;
+	   array[position]=temp;
+	 }
+	 printf("\n");
+	 for(k=0;k<n;k++)
+	 {
+	   printf("\t%d",array[k]);
+	 }
+	}
+	printf("\n Sorted Elements:");
+	for(i=0;i<n;i++)
+	{
+	  printf("\t%d",array[i]);
+	}
+	getch();
+}
